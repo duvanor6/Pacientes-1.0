@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Salud A Tu Mano, Inicio de Sesión">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="static/css/Login.css" media="screen">
+    <script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="static/js/pacientes/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900">
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Login">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body">
+
+    <section class="content">
+      {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %}
+    </section>
+
+    <section class="u-clearfix u-section-1" id="sec-9805">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">Salud&nbsp;<br>A Tu Mano
+        </h1>
+        <a href="https://nicepage.review" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-4-dark-1 u-palette-4-light-2 u-radius-50 u-btn-1"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 513.64 513.64" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72 c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68 c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44 l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"></path></svg><img></span>&nbsp;Contactenos
+        </a>
+      </div>
+    </section>
+    <section class="u-clearfix u-valign-middle u-section-2" id="sec-36a0">
+      <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-44 u-size-xs-60 u-layout-cell-1" src="">
+              <div class="u-container-layout u-container-layout-1" src="">
+                <div class="u-align-center u-container-style u-grey-5 u-group u-radius-15 u-shape-round u-group-1">
+                  <div class="u-container-layout u-container-layout-2">
+                    <h1 class="u-text u-text-default u-text-1">Salud A Tu Mano</h1>
+                    <p class="u-text u-text-default u-text-2">Este sitio web funciona bajo la modalidad Flask, desarrollado para el programa <span style="font-weight: 700;">Misión TIC</span> que llega a nosotros mediante la <span style="font-weight: 700;">Universidad del Norte</span> cuya sede principal se encuentra en Barranquilla.&nbsp;<br>Para registrarte en el sitio dale click a continuación:
+                    </p>
+                    <a href="/registro" class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1">Registrarse</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-16 u-size-xs-60 u-layout-cell-2" src="">
+              <div class="u-container-layout u-container-layout-3">
+                <div class="u-align-center u-container-style u-grey-5 u-group u-radius-15 u-shape-round u-group-2">
+                  <div class="u-container-layout u-valign-middle u-container-layout-4">
+                    <h3 class="u-text u-text-default u-text-3">Iniciar Sesión</h3>
+                    <div class="u-form u-login-control u-form-1">
+
+
+                      <form action="{{url_for('login')}}" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-35 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
+                        <div class="u-form-group u-form-name">
+                          <label for="username-708d" class="u-form-control-hidden u-label"></label>
+                          <input type="text" placeholder="Ingresa tu usuario" id="username" name="username" class="u-border-2 u-border-grey-50 u-input u-input-rectangle u-radius-15 u-white" required="">
+                        </div>
+                        <div class="u-form-group u-form-password">
+                          <label for="password-708d" class="u-form-control-hidden u-label"></label>
+                          <input type="password" placeholder="Ingresa tu clave" id="password" name="password" class="u-border-2 u-border-grey-50 u-input u-input-rectangle u-radius-15 u-white" required="">
+                        </div>
+                        <div class="u-form-checkbox u-form-group">
+                          <input type="checkbox" id="checkbox-708d" name="remember" value="On">
+                          <label for="checkbox-708d" class="u-label">Recordarme</label>
+                        </div>
+                        <div class="u-align-center u-form-group u-form-submit">
+                          <a class="u-active-custom-color-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-2 u-radius-15 u-btn-2">Login</a>
+                          <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                      </form>
+
+
+                      
+                    </div>
+                    <a href="" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-3">Olvidaste tu contraseña?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+  </body>
+</html>

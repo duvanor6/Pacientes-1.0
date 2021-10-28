@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Apartar Cita">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>solicitarcita</title>
+    <link rel="stylesheet" href="static/css/pacientes/nicepage.css" media="screen">
+<link rel="stylesheet" href="static/css/pacientes/solicitarcita/solicitarcita.css" media="screen">
+    <script class="u-script" type="text/javascript" src="static/js/pacientes/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="static/js/pacientes/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Pacientes"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="solicitarcita">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-4863"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
+    
+    <section class="content">
+      {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %}
+    </section>
+    
+    <div class="u-border-2 u-border-grey-dark-1 u-line u-line-vertical u-line-1"></div>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Medicos" style="padding: 12px 24px;">Medicos</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Perfil" style="padding: 12px 24px;">Perfil</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Contactenos" style="padding: 12px 24px;">Contactenos</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Medicos" style="padding: 12px 24px;">Medicos</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Perfil" style="padding: 12px 24px;">Perfil</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Contactenos" style="padding: 12px 24px;">Contactenos</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        <h3 class="u-headline u-text u-text-1">
+          <a href="/Pacientes">Salud<br>A Tu Mano<br>
+          </a>
+        </h3><span class="u-border-2 u-border-grey-30 u-icon u-icon-circle u-spacing-11 u-icon-1" data-href="/"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5cfb"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-5cfb"><g><path d="m111.447 329.406h42.272v-25.888h-42.272v-17.384h49.482v-26.854h-79.431v116.331h80.906v-26.854h-50.957z"></path><path d="m245.359 259.28-21.137 36.701-21.136-36.701h-34.572l38.832 58.984-37.52 57.347h34.571l19.825-35.063 19.826 35.063h34.408l-37.521-57.347 38.831-58.984z"></path><path d="m287.958 259.28h31.949v116.331h-31.949z"></path><path d="m331.54 287.134h34.006v88.477h30.95v-88.477h34.006v-27.854h-98.962z"></path><path d="m434.845 159.814c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-166.31c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-77.155v302.867h512v-302.867zm-47.845-16.495c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm-262 0c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm357 289.362h-452v-242.867h56.635c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h185.27c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h56.635z"></path>
+</g></svg></span>
+      </div></header>
+    <section class="u-align-center u-border-2 u-border-grey-75 u-clearfix u-grey-5 u-section-1" id="carousel_15e2">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-text u-text-default u-text-1">Apartar Cita</h1>
+        <div class="u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-grey-15 u-layout-cell u-radius-15 u-shape-round u-size-38 u-layout-cell-1">
+                <div class="u-container-layout u-valign-top-lg u-container-layout-1">
+                  <div class="u-form u-form-1">
+                    
+                    
+                    <form action="/solicitarcita/apartarcita" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form" redirect="true">
+        
+        
+                      <div class="u-form-email u-form-group u-form-partition-factor-2 u-block-6447-34"><label for="email-f2a8" class="u-label u-block-6447-35">E-mail</label>
+                  <input type="email" placeholder="Ingresa tu correo" id="email-f2a8" name="emailCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-36" required=""></div><div class="u-form-group u-form-name u-form-partition-factor-2 u-block-6447-31"><label for="name-f2a8" class="u-label u-block-6447-32">Nombre</label>
+                  <input type="text" placeholder="Ingresa tu nombre" id="name-f2a8" name="name" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-33" required=""></div><div class="u-form-group u-form-select u-block-6447-61">
+                  <label for="select-bc22" class="u-label u-block-6447-62">Tipo de documento</label>
+                  <div class="u-form-select-wrapper">
+                      <select id="select-bc22" name="tipodocCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-63" required="required"><option value="Cédula de ciudadanía">Cédula de ciudadanía</option><option value="Pasaporte">Pasaporte</option><option value="Tarjeta de identidad">Tarjeta de identidad</option></select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                  </div>
+              </div><div class="u-form-group u-block-6447-58">
+                  <label for="text-f294" class="u-label u-block-6447-59">Numero de documento</label>
+                  <input type="text" placeholder="Ingresa tu documento" id="text-f294" name="docCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-60" required="required">
+              </div>
+                      <div class="u-form-group u-form-select u-block-6447-48"><label for="select-8e9d" class="u-label u-block-6447-49">Tipo de cita</label>
+                  <div class="u-form-select-wrapper">
+                      <select id="select-8e9d" name="tipoCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-50"><option value="Medicina General">Medicina General</option><option value="Odontologia">Odontologia</option><option value="Otro">Otro</option></select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                  </div></div><div class="u-form-date u-form-group u-block-6447-65">
+                  <label for="date-eab3" class="u-label u-block-6447-66">Fecha de la cita</label>
+                  <input type="date" placeholder="MM/DD/YYYY" id="date-eab3" name="fechaCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-67" required="">
+              </div><div class="u-form-date u-form-group u-form-partition-factor-2 u-block-6447-42"><label for="date-4441" class="u-label u-block-6447-43">Fecha de nacimiento</label>
+                  <input type="date" placeholder="MM/DD/YYYY" id="date-4441" name="dateCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-44" required=""></div><div class="u-form-group u-form-partition-factor-2 u-form-phone u-block-6447-45"><label for="phone-447e" class="u-label u-block-6447-46">Celular</label>
+                  <input type="tel" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Ingresa tu numero de celular" id="phone-447e" name="celCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-47" required=""></div><div class="u-form-group u-form-message u-block-6447-37"><label for="message-f2a8" class="u-label u-block-6447-38">Agregado</label>
+                  <textarea placeholder="Ingresa una observación (Opcional)" rows="4" cols="50" id="message-f2a8" name="mensajeCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-39" required="required"></textarea></div><div class="u-align-center u-form-group u-form-submit u-block-6447-40">
+                          <a class="u-border-2 u-border-grey-75 u-btn u-btn-round u-btn-submit u-button-style u-grey-10 u-radius-15 u-block-6447-41">solicitar cita</a>
+                          <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                      
+                      <input type="hidden" value="" name="recaptchaResponse">
+                  </form>
+                  </div>
+                </div>
+              </div>
+              <div class="u-align-center u-container-style u-layout-cell u-radius-15 u-shape-round u-size-22 u-white u-layout-cell-2">
+                <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4b44"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-4b44"><g><g><path d="m246.23 426.666h-195.039c-18.851 0-34.132-15.282-34.132-34.132v-34.134h261.957z" fill="#d3dcfb"></path><path d="m460.825 153.6v143.398 95.534h-409.634c-18.851 0-34.132-15.282-34.132-34.133v-204.799l238.95-85.334z" fill="#ebf5fc"></path><g fill="#3c58a0"><path d="m77.336 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m145.603 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m213.869 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.581 8-8 8z"></path><path d="m282.136 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m350.391 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.581 8-8 8z"></path><path d="m418.658 221.867h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m77.336 290.133h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.419-3.582 8-8 8z"></path><path d="m145.603 290.133h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.419-3.582 8-8 8z"></path><path d="m213.869 290.133h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.419-3.581 8-8 8z"></path><path d="m290.136 290.133v-25.6c0-4.713-3.82-8.533-8.533-8.533h-17.067c-4.713 0-8.533 3.82-8.533 8.533v17.067c0 4.713 3.821 8.533 8.533 8.533z"></path><path d="m77.336 358.4h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m145.603 358.4h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.582 8-8 8z"></path><path d="m213.869 358.4h-18.133c-4.418 0-8-3.582-8-8v-18.133c0-4.418 3.582-8 8-8h18.133c4.418 0 8 3.582 8 8v18.133c0 4.418-3.581 8-8 8z"></path>
+</g><path d="m418.417 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.219 4.178 5.219 7.662v17.65c0 3.484-2.165 6.456-5.219 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.65c-.001-4.552-3.691-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m350.15 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.219 4.178 5.219 7.662v17.65c0 3.484-2.165 6.456-5.219 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.241-3.69 8.241-8.241v-17.65c0-4.552-3.689-8.242-8.241-8.242z" fill="#2a428c"></path><path d="m281.895 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.65c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.65c-.001-4.552-3.691-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m213.628 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.65c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.65c-.001-4.552-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m145.361 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.219 4.178 5.219 7.662v17.65c0 3.484-2.165 6.456-5.219 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.65c0-4.552-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m77.095 187.733h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.65c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.65c-.001-4.552-3.691-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m77.095 256h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.651c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c-.001-4.552-3.691-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m77.095 324.267h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.651c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c-.001-4.553-3.691-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m145.361 256h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.219 4.178 5.219 7.662v17.651c0 3.484-2.165 6.456-5.219 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c0-4.552-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m145.361 324.267h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.219 4.178 5.219 7.662v17.651c0 3.484-2.165 6.456-5.219 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c0-4.553-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m213.628 256h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.651c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c-.001-4.552-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m290.136 290.133v-25.892c0-4.552-3.69-8.241-8.242-8.241h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.651c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h25.892z" fill="#2a428c"></path><path d="m213.628 324.267h-17.65c-1.068 0-2.085.21-3.022.579 3.055 1.206 5.22 4.178 5.22 7.662v17.651c0 3.484-2.165 6.456-5.22 7.662.937.37 1.954.58 3.022.58h17.65c4.552 0 8.242-3.69 8.242-8.241v-17.651c-.001-4.553-3.69-8.242-8.242-8.242z" fill="#2a428c"></path><path d="m437.114 143.721v153.277 95.535h23.711v-95.535-143.398z" fill="#d3dcfb"></path><path d="m460.825 153.6v-85.334c0-18.851-15.282-34.132-34.132-34.132h-375.502c-18.851 0-34.132 15.281-34.132 34.132v85.334z" fill="#ff4155"></path><g><g><g><path d="m124.609 75.993h-22.217c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h22.217c4.268 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726z" fill="#e80054"></path>
+</g><g><path d="m179.191 75.993h-22.217c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h22.217c4.268 0 7.726 3.459 7.726 7.726s-3.458 7.726-7.726 7.726z" fill="#e80054"></path>
+</g><g><path d="m320.887 75.993h-22.218c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h22.218c4.268 0 7.726 3.459 7.726 7.726s-3.458 7.726-7.726 7.726z" fill="#e80054"></path>
+</g><g><path d="m375.47 75.993h-22.218c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h22.218c4.268 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726z" fill="#e80054"></path>
+</g>
+</g>
+</g><path d="m162.125 64c0 11.782-9.551 21.333-21.333 21.333s-21.333-9.551-21.333-21.333v-42.667c-.001-11.782 9.55-21.333 21.332-21.333s21.333 9.551 21.333 21.333v42.667z" fill="#ebf5fc"></path><path d="m358.403 64c0 11.782-9.551 21.333-21.333 21.333s-21.334-9.551-21.334-21.333v-42.667c0-11.782 9.551-21.333 21.333-21.333s21.333 9.551 21.333 21.333v42.667z" fill="#ebf5fc"></path><path d="m337.069 0c-4.38 0-8.448 1.324-11.836 3.588 5.725 3.826 9.498 10.343 9.498 17.746v42.666c0 7.402-3.773 13.92-9.498 17.746 3.387 2.263 7.456 3.588 11.836 3.588 11.782 0 21.333-9.551 21.333-21.333v-42.668c.001-11.782-9.55-21.333-21.333-21.333z" fill="#d3dcfb"></path><path d="m140.791 0c-4.38 0-8.448 1.324-11.836 3.588 5.725 3.826 9.498 10.343 9.498 17.746v42.666c0 7.402-3.773 13.92-9.498 17.746 3.387 2.263 7.456 3.588 11.836 3.588 11.782 0 21.333-9.551 21.333-21.333v-42.668c.001-11.782-9.55-21.333-21.333-21.333z" fill="#d3dcfb"></path><path d="m426.693 34.133h-23.703c18.851 0 34.132 15.281 34.132 34.132v85.335h23.702v-85.334c.001-18.851-15.281-34.133-34.131-34.133z" fill="#e80054"></path><path d="m17.058 111.74h443.767v15.453h-443.767z" fill="#e80054"></path>
+</g><circle cx="366.942" cy="384" fill="#4fabf7" r="128"></circle><circle cx="366.942" cy="384" fill="#ebf5fc" r="93.867"></circle><g><g><path d="m366.942 374.659c-4.268 0-7.726-3.459-7.726-7.726v-42.667c0-4.267 3.459-7.726 7.726-7.726 4.268 0 7.726 3.459 7.726 7.726v42.667c0 4.267-3.459 7.726-7.726 7.726z" fill="#3c58a0"></path>
+</g>
+</g><g><g><path d="m409.609 391.726h-25.601c-4.268 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h25.601c4.268 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726z" fill="#3c58a0"></path>
+</g>
+</g><path d="m366.942 256c-3.995 0-7.945.193-11.847.551 65.137 5.979 116.152 60.752 116.152 127.449s-51.016 121.47-116.153 127.449c3.902.358 7.852.551 11.847.551 70.692 0 128-57.308 128-128s-57.307-128-127.999-128z" fill="#1886ea"></path><path d="m366.942 290.133c-4.01 0-7.961.253-11.839.741 46.252 5.821 82.028 45.295 82.028 93.126s-35.776 87.305-82.028 93.126c3.878.488 7.829.741 11.839.741 51.841 0 93.867-42.026 93.867-93.867s-42.026-93.867-93.867-93.867z" fill="#d3dcfb"></path><circle cx="366.942" cy="384" fill="#ffdd40" r="17.067"></circle>
+</g></svg></span>
+                  <p class="u-text u-text-2">Luego de apartar la cita recivirás un correo electronico de confirmación con los datos de la cita. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6055"><div class="u-clearfix u-sheet u-sheet-1"><span class="u-icon u-icon-circle u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f92b"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-f92b"><g><path d="m164.593 162.777-86.833 86.833c-5.858 5.858-5.858 15.355 0 21.213l78.4 78.4c5.857 5.858 15.355 5.859 21.213 0 5.858-5.858 5.858-15.355 0-21.213l-67.793-67.794 76.226-76.227c5.858-5.858 5.858-15.355 0-21.213s-15.356-5.858-21.213.001z"></path><path d="m355.84 162.777c-5.857-5.858-15.355-5.858-21.213 0s-5.858 15.355 0 21.213l67.793 67.794-76.226 76.227c-5.858 5.858-5.858 15.355 0 21.213 5.857 5.858 15.355 5.859 21.213 0l86.833-86.833c5.858-5.858 5.858-15.355 0-21.213z"></path><path d="m300.389 129.558c-7.814-2.76-16.38 1.338-19.139 9.149l-79.318 224.597c-2.758 7.812 1.337 16.38 9.149 19.139 7.809 2.758 16.38-1.336 19.139-9.149l79.318-224.597c2.758-7.812-1.338-16.381-9.149-19.139z"></path><path d="m439.536 68.701h-367.072c-39.957 0-72.464 32.507-72.464 72.464v229.67c0 39.957 32.507 72.464 72.464 72.464h367.072c39.957 0 72.464-32.507 72.464-72.464v-229.67c0-39.957-32.507-72.464-72.464-72.464zm42.464 302.134c0 23.415-19.049 42.464-42.464 42.464h-367.072c-23.415 0-42.464-19.049-42.464-42.464v-229.67c0-23.415 19.049-42.464 42.464-42.464h367.072c23.415 0 42.464 19.049 42.464 42.464z"></path>
+</g></svg></span>
+        <p class="u-small-text u-text u-text-variant u-text-1">Desarrollado por:<br>Grupo 5 MinTic
+        </p>
+      </div></footer>
+    
+  </body>
+</html>
