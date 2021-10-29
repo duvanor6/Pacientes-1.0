@@ -164,7 +164,7 @@ def apartarcita():
                 flash(error)
                 print("Cita apartada con exito!")   
                 error=None               
-                return render_template("Pacientes/SolicitarCitas/detallesdelacita.html",paciente=nom,tipoCita=tipoCita,FechaCita=fechaCita,Lugar="Sincelejo, Sucre",medico="Juan Lazarte",id=doc,EPS="Nueva EPS",cit=citas[0][0])
+                return render_template("Pacientes/SolicitarCitas/detallesdelacita.html",paciente=nom,tipoCita=tipoCita,FechaCita=fechaCita,Lugar="Sincelejo, Sucre",medico="Juan Lazarte",id=doc,EPS="Nueva EPS",cit="null")
             else:
                 print("Error de datos")
                 error = "No se pudo apartar la cita, verifique los datos"
