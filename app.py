@@ -48,7 +48,7 @@ def loginmedicos():
                         session['username']=user
                         session['password']=row[1]
                         session['opcion']="Login success"
-                        response = make_response(redirect('/Pacientes'))
+                        response = make_response(redirect('/Pacientes-Medicos'))
                         response.set_cookie("custome_cookie",str(row[0]))
                         return response
                     else:
@@ -86,7 +86,7 @@ def loginpaciente():
                         session['username']=user
                         session['password']=row[1]
                         session['opcion']="Login success"
-                        response = make_response(redirect('/Pacientes-Medicos'), )
+                        response = make_response(redirect('/Pacientes'), )
                         response.set_cookie("custome_cookie",str(row[0]))
                         return response
                     else:
@@ -184,8 +184,9 @@ def registro():
 @app.route('/solicitarcita')
 def solicitudcita():
     devolverMed = datosMedicos.devolverMedicos(datosMedicos.conectarse())
-    print(devolverMed)
-    return render_template('Pacientes/SolicitarCitas/solicitarcita.html', datoMedic = devolverMed)
+    fechaActual = datetime.today().strftime('%Y-%m-%d')
+    print(fechaActual)
+    return render_template('Pacientes/SolicitarCitas/solicitarcita.html', datoMedic = devolverMed, fecha = fechaActual)
 
 @app.route('/solicitarcita/apartarcita', methods=['GET','POST'])
 def apartarcita():
