@@ -100,17 +100,13 @@
                     <form action="/solicitarcita/apartarcita" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form" redirect="true">
         
         
-                      <div class="u-form-email u-form-group u-form-partition-factor-2 u-block-6447-34"><label for="email-f2a8" class="u-label u-block-6447-35">E-mail</label>
-                  <input type="email" placeholder="Ingresa tu correo" id="email-f2a8" name="emailCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-36" required=""></div><div class="u-form-group u-form-name u-form-partition-factor-2 u-block-6447-31"><label for="name-f2a8" class="u-label u-block-6447-32">Nombre</label>
+                    
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-block-6447-31">
+                    
+                    <label for="name-f2a8" class="u-label u-block-6447-32">Nombre</label>
                   <input type="text" placeholder="Ingresa tu nombre" id="name-f2a8" name="name" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-33" required=""></div><div class="u-form-group u-form-select u-block-6447-61">
-                  <label for="select-bc22" class="u-label u-block-6447-62">Tipo de documento</label>
-                  <div class="u-form-select-wrapper">
-                      <select id="select-bc22" name="tipodocCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-63" required="required"><option value="Cédula de ciudadanía">Cédula de ciudadanía</option><option value="Pasaporte">Pasaporte</option><option value="Tarjeta de identidad">Tarjeta de identidad</option></select>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-                  </div>
-              </div><div class="u-form-group u-block-6447-58">
-                  <label for="text-f294" class="u-label u-block-6447-59">Numero de documento</label>
-                  <input type="text" placeholder="Ingresa tu documento" id="text-f294" name="docCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-60" required="required">
+                  
+                    
               </div>
                       <div class="u-form-group u-form-select u-block-6447-48"><label for="select-8e9d" class="u-label u-block-6447-49">Tipo de cita</label>
                   <div class="u-form-select-wrapper">
@@ -119,10 +115,24 @@
                   </div></div><div class="u-form-date u-form-group u-block-6447-65">
                   <label for="date-eab3" class="u-label u-block-6447-66">Fecha de la cita</label>
                   <input type="date" placeholder="MM/DD/YYYY" id="date-eab3" name="fechaCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-67" required="">
-              </div><div class="u-form-date u-form-group u-form-partition-factor-2 u-block-6447-42"><label for="date-4441" class="u-label u-block-6447-43">Fecha de nacimiento</label>
-                  <input type="date" placeholder="MM/DD/YYYY" id="date-4441" name="dateCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-44" required=""></div><div class="u-form-group u-form-partition-factor-2 u-form-phone u-block-6447-45"><label for="phone-447e" class="u-label u-block-6447-46">Celular</label>
-                  <input type="tel" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Ingresa tu numero de celular" id="phone-447e" name="celCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-47" required=""></div><div class="u-form-group u-form-message u-block-6447-37"><label for="message-f2a8" class="u-label u-block-6447-38">Agregado</label>
-                  <textarea placeholder="Ingresa una observación (Opcional)" rows="4" cols="50" id="message-f2a8" name="mensajeCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-39" required="required"></textarea></div><div class="u-align-center u-form-group u-form-submit u-block-6447-40">
+              </div>
+              
+              <div class="u-form-group u-form-select u-form-group-1">
+                <label for="select-fcb7" class="u-custom-font u-font-montserrat u-label u-label-1">Medico:</label>
+                <div class="u-form-select-wrapper">
+                  <select id="select-fcb7" name="medico" class="u-border-1 u-border-black u-border-no-left u-border-no-right u-border-no-top u-custom-font u-font-montserrat u-input u-input-rectangle u-input-1" required="required">
+                    {% for dato in datoMedic %}
+                    <option value="{%print(dato[0])%}">{%print(dato[1])%}</option>
+                    {% endfor %}
+                  </select>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                </div>
+                  
+                  <div class="u-form-group u-form-partition-factor-2 u-form-phone u-block-6447-45"><label for="phone-447e" class="u-label u-block-6447-46">Celular</label>
+                  
+                    <input type="tel" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Ingresa tu numero de celular" id="phone-447e" name="celCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-47" required=""></div><div class="u-form-group u-form-message u-block-6447-37"><label for="message-f2a8" class="u-label u-block-6447-38">Agregado</label>
+                  
+                    <textarea placeholder="Ingresa una observación (Opcional)" rows="4" cols="50" id="message-f2a8" name="mensajeCita" class="u-border-2 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-block-6447-39" required="required"></textarea></div><div class="u-align-center u-form-group u-form-submit u-block-6447-40">
                           <a class="u-border-2 u-border-grey-75 u-btn u-btn-round u-btn-submit u-button-style u-grey-10 u-radius-15 u-block-6447-41">solicitar cita</a>
                           <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>

@@ -2,7 +2,7 @@ import sqlite3
 
 def conectarse():
     try:
-        con = sqlite3.connect('dbcitas.db')
+        con = sqlite3.connect('db.db')
         #print("conectados a citas")
         return con
     except:
@@ -11,7 +11,7 @@ def conectarse():
 def crearTabla(con):
     try:
         cursorObj = con.cursor()
-        cursorObj.execute('CREATE TABLE if not exists citas (id integer PRIMARY KEY AUTOINCREMENT, nombre text, documento integer, tipo_documento text, tipo_cita text, fecha_cita date, fecha_creacion date, celular text, agregado real)')
+        cursorObj.execute('CREATE TABLE if not exists citas (id integer PRIMARY KEY AUTOINCREMENT, nombre text, documento integer, tipo_cita text, fecha_cita date, fecha_creacion date, celular text, agregado real, medico text)')
         con.commit()
         con.close()
         #print("Tabla creada para citas")
@@ -23,7 +23,7 @@ def registrarCita(con, datos):
     valor = False
     try:
         cursorObj = con.cursor()
-        cursorObj.execute('INSERT INTO citas (nombre, documento, tipo_documento, tipo_cita, fecha_cita, fecha_creacion,celular, agregado) VALUES'+datos)
+        cursorObj.execute('INSERT INTO citas (nombre, documento, tipo_cita, fecha_cita, fecha_creacion,celular, agregado, medico) VALUES'+datos)
         con.commit()
         cursorObj.close()
         con.close()
@@ -39,6 +39,18 @@ def obtenerCitas(con, cedula):
     try:
         cursorObj = con.cursor()
         cursorObj.execute("SELECT * FROM citas WHERE documento = '"+cedula+"'")
+        result = cursorObj.fetchall()
+        con.close()
+        return result
+    except ValueError:
+        #print("No se encontró cita(s)")
+        return None
+
+def obtenerCitasMed(con, cedula):
+    result = None
+    try:
+        cursorObj = con.cursor()
+        cursorObj.execute("SELECT * FROM citas WHERE medico = '"+cedula+"'")
         result = cursorObj.fetchall()
         con.close()
         return result

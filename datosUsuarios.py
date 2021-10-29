@@ -3,7 +3,7 @@ from sqlite3.dbapi2 import Cursor
 
 def conectarse():
     try:
-        con = sqlite3.connect('usuarios.db')
+        con = sqlite3.connect('db.db')
         print("conectados")
         return con
     except:
@@ -14,7 +14,7 @@ def conectarse():
 def crearTabla(con):
     try:
         cursorObj = con.cursor()
-        cursorObj.execute('CREATE TABLE if not exists pacientes (cedula integer PRIMARY KEY, nombre text, apellido text, tipo_documento text, clave text, correo text)')
+        cursorObj.execute('CREATE TABLE if not exists pacientes (cedula integer PRIMARY KEY, nombre text, apellido text, tipo_documento text, clave text, correo text, userTip text)')
         con.commit()
         con.close()
         print("Tabla creada")
@@ -25,7 +25,7 @@ def registrarUsuario(con, datos):
     valor = False
     try:
         cursorObj = con.cursor()
-        cursorObj.execute('INSERT INTO pacientes (cedula, nombre, apellido, tipo_documento, clave, correo) VALUES'+datos)
+        cursorObj.execute('INSERT INTO pacientes (cedula, nombre, apellido, tipo_documento, clave, correo, userTip) VALUES'+datos)
         con.commit()
         cursorObj.close()
         con.close()

@@ -15,14 +15,55 @@ def index():
     if 'username' in session:
         session.clear()
     datosMedicos.crearTabla(datosMedicos.conectarse())
-    return render_template('Login.html')
+    return render_template('LoginModo.html')
+
+@app.route('/login-paciente')
+def logpac():
+    return render_template('/LoginPacientes.html')
+
+@app.route('/login-medicos')
+def logmed():
+    return render_template('/LoginMedicos.html')
 
 @app.route('/contactanos')
 def acerca():
     return render_template('About.html')
 
-@app.route('/login', methods=('GET','POST'))
-def login():
+@app.route('/log-medicos', methods=('GET','POST'))
+def loginmedicos():
+    try:
+        if request.method=='POST':
+            user = request.form['username']
+            password = request.form['password']            
+            
+            if datosMedicos.validarUsuario(datosMedicos.conectarse(),user):
+                datos = datosMedicos.devolverUsuario(datosMedicos.conectarse(),user)
+                #print(datos)
+                for row in datos:
+                    print("User: ",row[0],"Clave: ",row[1])
+                    if(str(row[0])==str(user) and check_password_hash(row[1],password)):
+                        session.clear()
+                        session['username']=user
+                        session['password']=row[1]
+                        session['opcion']="Login success"
+                        response = make_response(render_template("Doctores/index.html"))
+                        response.set_cookie("custome_cookie",str(row[0]))
+                        return response
+                    else:
+                        error = "Datos incorrectos, intentalo de nuevo"
+                        flash(error)
+                        print("Error!")
+                        error=""
+                        return redirect('/')      
+            
+                       
+    except ValueError:
+        print('error',ValueError)
+        return render_template('Login.html')
+
+
+@app.route('/log-paciente', methods=('GET','POST'))
+def loginpaciente():
     try:
         if request.method=='POST':
             user = request.form['username']
@@ -47,16 +88,11 @@ def login():
                         print("Error!")
                         error=""
                         return redirect('/')      
-            elif(user=="Medico" or user=="medico"):
-                #error = "Datos incorrectos"
-                #flash(error)
-                #print("Error!")
-                #error=""
-                return redirect('Inicio-Medicos') 
-                       
+            
     except ValueError:
         print('error',ValueError)
         return render_template('Login.html')
+
 
 @app.route('/eliminar-cita+<int:id>')
 def eliminarcita(id):
@@ -89,11 +125,14 @@ def registrarse():
             doc = request.form['docReg']
             corr =request.form['emailReg']
             clave = generate_password_hash(request.form['passReg'])             
-            datos ="("+doc+",'"+nom+"','"+ape+"','"+tipo+"','"+clave+"','"+corr+"')"
+            datos ="("+doc+",'"+nom+"','"+ape+"','"+tipo+"','"+clave+"','"+corr+"','"+request.form['userTipe']+"')"
             #print(clave)
-            val = datosUsuarios.registrarUsuario(datosUsuarios.conectarse(),datos)  
-            datosUsuarios.conectarse().close()
-
+            if(request.form['userTipe']=='Medico'):
+                val = datosMedicos.registrarUsuario(datosUsuarios.conectarse(),datos)  
+                datosUsuarios.conectarse().close()
+            elif(request.form['userTipe']=='Paciente'):
+                val = datosUsuarios.registrarUsuario(datosUsuarios.conectarse(),datos)  
+                datosUsuarios.conectarse().close()
         except:
             error = "Error al intentar registrar"
             flash(error)
@@ -129,7 +168,9 @@ def registro():
 
 @app.route('/solicitarcita')
 def solicitudcita():
-    return render_template('Pacientes/SolicitarCitas/solicitarcita.html')
+    devolverMed = datosMedicos.devolverMedicos(datosMedicos.conectarse())
+    print(devolverMed)
+    return render_template('Pacientes/SolicitarCitas/solicitarcita.html', datoMedic = devolverMed)
 
 @app.route('/solicitarcita/apartarcita', methods=['GET','POST'])
 def apartarcita():
@@ -137,18 +178,16 @@ def apartarcita():
     if request.method=='POST':
         try:
             datosCitas.crearTabla(datosCitas.conectarse())
-            nom =request.form['name']
-            
-            mail = request.form['emailCita']
-            tipdoc = request.form['tipodocCita']
-            doc = request.form['docCita']
+            nom =request.form['name']            
+            doc = request.cookies['custome_cookie']
             tipoCita = request.form['tipoCita']
             fechaCita = request.form['fechaCita']
             fechaCre = datetime.today().strftime('%Y-%m-%d')
             print(fechaCre)
+            med = request.form['medico']
             cel = request.form['celCita']
             agg = request.form['mensajeCita']            
-            datos ="('"+nom+"',"+doc+",'"+tipdoc+"','"+tipoCita+"','"+fechaCita+"','"+fechaCre+"','"+cel+"','"+agg+"')"
+            datos ="('"+nom+"',"+doc+",'"+tipoCita+"','"+fechaCita+"','"+fechaCre+"','"+cel+"','"+agg+"','"+med+"')"
             print(datos)
             val = datosCitas.registrarCita(datosCitas.conectarse(),datos)
 
@@ -208,49 +247,61 @@ def historiasMedicas():
 def vercitas():
     doc =request.cookies.get("custome_cookie")
     salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
-    limite = list()
+    citas = list()
+    medicos = list()
+    vec = list()
     max = len(salidas)
     min = len(salidas) - 11
     cont = 0
     print(len(salidas)-10)
-    for a in range(len(salidas)):
+    if(max > 10):
+        for a in range(len(salidas)):            
+            if(cont > min and cont < max):
+                citas.append(salidas[cont])
+                #limite.add(salidas[cont])
+            cont += 1
+    else:
+        for a in range(len(salidas)):            
+            citas.append(salidas[cont])
+            cont = cont + 1
+    for a in citas:
+        print(a[8])
+        vec.append(datosMedicos.datosPerfil(datosMedicos.conectarse(),a[8]))
+    print(vec)
+    for e in vec:
         cont += 1
-        if(cont > min and cont < max):
-            limite.append(salidas[cont])
-            #limite.add(salidas[cont])
-    return render_template('Pacientes/SolicitarCitas/vercitas.html', citas=limite)
+        
+        print(e)
+        for i in e:
+            nom = str(i[1]) +" "+str(i[2]) 
+            medicos.append(nom)
+            nom= ""
+    
+    return render_template('Pacientes/SolicitarCitas/vercitas.html', citas=citas, medicos=medicos)
 
 @app.route('/Inicio-Medicos')
 def indexMedicos():
-    #doc =request.cookies.get("custome_cookie")
-    #salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
     return render_template('Doctores/index.html')
 
 @app.route('/Pacientes-Medicos')
 def PacientesMedicos():
-    #doc =request.cookies.get("custome_cookie")
-    #salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
     return render_template('Doctores/index.html')
 
 @app.route('/Perfil-Medico')
 def PerfilMedico():
-    #doc =request.cookies.get("custome_cookie")
-    #salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
     return render_template('Doctores/index.html')
 
 @app.route('/Agenda-Medica')
 def AgendaMedico():
-    #doc =request.cookies.get("custome_cookie")
-    #salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
-    return render_template('Doctores/Listadecitas.html')
+    print(request.cookies.get("custome_cookie"))
+    citas = list(datosCitas.obtenerCitasMed(datosCitas.conectarse(),request.cookies.get("custome_cookie")))
+    return render_template('Doctores/Listadecitas.html',citas = citas)
 
 @app.route('/Historia-Medica')
 def HistoriaMedica():
-    #doc =request.cookies.get("custome_cookie")
-    #salidas = list(datosCitas.obtenerCitas(datosCitas.conectarse(),doc))
     return render_template('Doctores/Historias-Medicas.html')
 
-# Modulo Principal
+
 if __name__=='__main__':
     app.run(debug=True)
 
