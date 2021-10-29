@@ -164,7 +164,7 @@ def detallescita(idcita):
     
 @app.route('/registro')
 def registro():
-    return render_template('pacientes/registro.html')
+    return render_template('Pacientes/registro.html')
 
 @app.route('/solicitarcita')
 def solicitudcita():
