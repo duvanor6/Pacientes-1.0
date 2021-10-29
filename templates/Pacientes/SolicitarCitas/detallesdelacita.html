@@ -8,7 +8,7 @@
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Cita Apartada</title>
     <link rel="stylesheet" href="{{url_for('static', filename='/css/pacientes/nicepage.css')}}" media="screen">
-<link rel="stylesheet" href="{{url_for('static', filename='/css/pacientes/solicitarcita/detallesdelacita.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/pacientes/solicitarcita/detallesdelacita.css')}}" media="screen">
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='/js/pacientes/jquery.js')}}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='/js/pacientes/nicepage.js')}}" defer=""></script>
     <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
@@ -22,78 +22,77 @@
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="detallesdelacita">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-4863"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-       
-    
-    
-    
     <div class="u-border-2 u-border-grey-dark-1 u-line u-line-vertical u-line-1"></div>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+      <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
 </symbol>
 </defs></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Medicos" style="padding: 12px 24px;">Medicos</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Perfil" style="padding: 12px 24px;">Perfil</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/Contactenos" style="padding: 12px 24px;">Contactenos</a>
 </li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Pacientes" style="padding: 12px 24px;">Citas</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Medicos" style="padding: 12px 24px;">Medicos</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Perfil" style="padding: 12px 24px;">Perfil</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Contactenos" style="padding: 12px 24px;">Contactenos</a>
 </li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-        <h3 class="u-headline u-text u-text-1">
-          <a href="/Pacientes">Salud<br>A Tu Mano<br>
-          </a>
-        </h3><span class="u-border-2 u-border-grey-30 u-icon u-icon-circle u-spacing-11 u-icon-1" data-href="/"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5cfb"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-5cfb"><g><path d="m111.447 329.406h42.272v-25.888h-42.272v-17.384h49.482v-26.854h-79.431v116.331h80.906v-26.854h-50.957z"></path><path d="m245.359 259.28-21.137 36.701-21.136-36.701h-34.572l38.832 58.984-37.52 57.347h34.571l19.825-35.063 19.826 35.063h34.408l-37.521-57.347 38.831-58.984z"></path><path d="m287.958 259.28h31.949v116.331h-31.949z"></path><path d="m331.54 287.134h34.006v88.477h30.95v-88.477h34.006v-27.854h-98.962z"></path><path d="m434.845 159.814c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-166.31c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-77.155v302.867h512v-302.867zm-47.845-16.495c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm-262 0c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm357 289.362h-452v-242.867h56.635c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h185.27c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h56.635z"></path>
-</g></svg></span>
-      </div></header>
-    <section class="u-clearfix u-grey-5 u-section-1" id="sec-9a28">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-grey-10 u-group u-radius-20 u-shape-round u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <div class="u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-            <h1 class="u-align-center u-text u-text-default u-text-1">Cita apartada!</h1>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-2">PACIENTE:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-3">TIPO DE CITA:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-4">FECHA:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-5">LUGAR:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-6">MEDICO:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-7">NUMERO DE IDENTIFICACIÓN:</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-8">EPS:</h4>
-            <div class="u-border-2 u-border-grey-30 u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="150" data-image-height="150"></div>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-9">{{paciente}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-10">{{tipoCita}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-11">{{FechaCita}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-12">{{Lugar}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-13">{{medico}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-14">{{id}}</h4>
-            <h4 class="u-align-center-lg u-align-center-xl u-text u-text-default u-text-15">{{EPS}}</h4>
           </div>
         </div>
-        <div class="u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-grey-10 u-group u-radius-20 u-shape-round u-group-2">
-          <div class="u-container-layout u-container-layout-2">
+        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+      </div>
+    </nav>
+    <h3 class="u-headline u-text u-text-1">
+      <a href="/Pacientes">Salud<br>A Tu Mano<br>
+      </a>
+    </h3><span class="u-border-2 u-border-grey-30 u-icon u-icon-circle u-spacing-11 u-icon-1" data-href="/"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5cfb"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-5cfb"><g><path d="m111.447 329.406h42.272v-25.888h-42.272v-17.384h49.482v-26.854h-79.431v116.331h80.906v-26.854h-50.957z"></path><path d="m245.359 259.28-21.137 36.701-21.136-36.701h-34.572l38.832 58.984-37.52 57.347h34.571l19.825-35.063 19.826 35.063h34.408l-37.521-57.347 38.831-58.984z"></path><path d="m287.958 259.28h31.949v116.331h-31.949z"></path><path d="m331.54 287.134h34.006v88.477h30.95v-88.477h34.006v-27.854h-98.962z"></path><path d="m434.845 159.814c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-166.31c-.588-20.558-14.189-37.904-32.845-44.076v-66.42h-30v66.42c-18.656 6.172-32.257 23.518-32.845 44.076h-77.155v302.867h512v-302.867zm-47.845-16.495c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm-262 0c9.859 0 17.88 8.021 17.88 17.88s-8.021 17.88-17.88 17.88-17.88-8.021-17.88-17.88 8.021-17.88 17.88-17.88zm357 289.362h-452v-242.867h56.635c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h185.27c8.739 11.686 22.683 19.264 38.365 19.264s29.626-7.578 38.365-19.264h56.635z"></path>
+</g></svg></span>
+  </div></header>
+    <section class="u-clearfix u-grey-5 u-section-1" id="sec-9a28">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-expanded-width u-grey-10 u-group u-radius-20 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+            <h1 class="u-align-center u-text u-text-default u-text-1">Cita apartada!</h1>
+            <h4 class="u-text u-text-default u-text-2">PACIENTE:</h4>
+            <h4 class="u-text u-text-default u-text-3">TIPO DE CITA:</h4>
+            <h4 class="u-text u-text-default u-text-4">FECHA:</h4>
+            <h4 class="u-text u-text-default u-text-5">LUGAR:</h4>
+            <h4 class="u-text u-text-default u-text-6">MEDICO:</h4>
+            <h4 class="u-text u-text-default u-text-7">NUMERO DE IDENTIFICACIÓN:</h4>
+            <h4 class="u-text u-text-default u-text-8">EPS:</h4>
+            <div class="u-border-2 u-border-grey-30 u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="150" data-image-height="150"></div>
+            
+            <h4 class="u-text u-text-default u-text-9">{{paciente}}</h4>
+            <h4 class="u-text u-text-default u-text-10">{{tipoCita}}</h4>
+            <h4 class="u-text u-text-default u-text-11">{{FechaCita}}</h4>
+            <h4 class="u-text u-text-default u-text-12">{{Lugar}}</h4>
+            <h4 class="u-text u-text-default u-text-13">{{medico}}</h4>
+            <h4 class="u-text u-text-default u-text-14">{{id}}</h4>
+            <h4 class="u-text u-text-default u-text-15">{{EPS}}</h4>
             
             
-            <span data-href="/modificar-cita" class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-bc81"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-bc81"><g><g id="XMLID_224_"><g id="XMLID_225_"><g id="XMLID_226_"><g id="XMLID_227_"><g id="XMLID_228_"><g id="XMLID_229_"><g id="XMLID_230_"><g id="XMLID_231_"><g id="XMLID_232_"><g id="XMLID_233_"><g id="XMLID_234_"><g id="XMLID_235_"><g id="XMLID_236_"><g id="XMLID_237_"><circle id="XMLID_238_" cx="256" cy="256" fill="#ff90c2" r="256"></circle>
+            
+          
+          </div>
+        </div>
+        <div class="u-container-style u-expanded-width u-grey-10 u-group u-radius-20 u-shape-round u-group-2">
+          <div class="u-container-layout u-container-layout-2"><span class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-spacing-6 u-icon-1" data-href="/modificar-cita+{{cit}}"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-bc81"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-bc81"><g><g id="XMLID_224_"><g id="XMLID_225_"><g id="XMLID_226_"><g id="XMLID_227_"><g id="XMLID_228_"><g id="XMLID_229_"><g id="XMLID_230_"><g id="XMLID_231_"><g id="XMLID_232_"><g id="XMLID_233_"><g id="XMLID_234_"><g id="XMLID_235_"><g id="XMLID_236_"><g id="XMLID_237_"><circle id="XMLID_238_" cx="256" cy="256" fill="#ff90c2" r="256"></circle>
 </g>
 </g>
 </g>
@@ -112,25 +111,25 @@
 </g><path d="m165.373 397.176-45.548-45.549-22.217 67.765z" fill="#4a5be5"></path><path d="m165.377 397.175-67.769 22.217 44.993-44.993z" fill="#283ee1"></path><path d="m398.434 212.119-93.553-93.553 35.214-35.214c15.199-15.199 39.842-15.199 55.041 0l38.512 38.512c15.199 15.199 15.199 39.842 0 55.041z" fill="#00f8fe"></path><g><path d="m433.647 176.904-35.214 35.214-46.775-46.775 62.734-62.734 19.254 19.255c15.203 15.201 15.203 39.837.001 55.04z" fill="#00d9e0"></path>
 </g><path d="m274.655 154.013h132.304v44.36h-132.304z" fill="#fff" transform="matrix(.707 .707 -.707 .707 224.407 -189.382)"></path><path d="m342.018 166.502h44.36v66.15h-44.36z" fill="#ededed" transform="matrix(.707 -.707 .707 .707 -34.451 315.982)"></path>
 </g>
-</g></svg></span>
-
-<span data-href="/eliminar-cita+{{cit}}" class="u-icon u-icon-circle u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3a63"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-3a63"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="256" x2="256" y1="512" y2="0"><stop offset="0" stop-color="#fd3a84"></stop><stop offset="1" stop-color="#ffa68d"></stop>
+</g></svg></span><span class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-spacing-6 u-icon-2" data-href="/eliminar-cita+{{cit}}"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3a63"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-3a63"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="256" x2="256" y1="512" y2="0"><stop offset="0" stop-color="#fd3a84"></stop><stop offset="1" stop-color="#ffa68d"></stop>
 </linearGradient><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="256" x2="256" y1="421.015" y2="60"><stop offset="0" stop-color="#ffc2cc"></stop><stop offset="1" stop-color="#fff2f4"></stop>
 </linearGradient><g><g><g><path d="m417.4 181 3.6-44.801c.652-9.116-6.531-16.199-15-16.199h-300c-8.483 0-15.651 7.097-15 16.199l3.6 44.801-28.8 15 31.2 15 21.599 259.9c2.401 23.399 21.601 41.1 45 41.1h184.801c23.399 0 42.599-17.701 45-41.4l21.6-259.6 31.2-15zm-221.4-91c8.291 0 15-6.709 15-15 0-24.814 20.186-45 45-45s45 20.186 45 45c0 8.291 6.709 15 15 15s15-6.709 15-15c0-41.353-33.647-75-75-75s-75 33.647-75 75c0 8.291 6.709 15 15 15z" fill="url(#SVGID_1_)"></path>
 </g>
 </g><g><g><path d="m76 181c-8.401 0-15 6.599-15 15 0 8.399 6.599 15 15 15h21l-2.4-30zm360 0h-18.6l-2.4 30h21c8.401 0 15-6.601 15-15 0-8.401-6.599-15-15-15zm-30-121h-300c-24.814 0-45 20.186-45 45v30c0 8.291 6.709 15 15 15h360c8.291 0 15-6.709 15-15v-30c0-24.814-20.186-45-45-45zm-217.354 164.755c-.674-8.247-7.939-14.531-16.187-13.696-8.262.688-14.385 7.925-13.696 16.187l15 180c.7 8.509 8.344 14.508 16.187 13.696 8.262-.688 14.385-7.925 13.696-16.187zm150.894-13.696c-8.408-.82-15.498 5.449-16.187 13.696l-15 180c-.688 8.262 5.435 15.498 13.696 16.187 7.858.813 15.489-5.211 16.187-13.696l15-180c.689-8.263-5.434-15.499-13.696-16.187zm-83.54-.059c-8.291 0-15 6.709-15 15v180c0 8.291 6.709 15 15 15s15-6.709 15-15v-180c0-8.291-6.709-15-15-15z" fill="url(#SVGID_2_)"></path>
 </g>
 </g>
-</g></svg></span>
-
-
-<span data-href="/vercitas" class="u-icon u-icon-circle u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5629"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-5629"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="512" y1="256" y2="256"><stop offset="0" stop-color="#00f1ff"></stop><stop offset=".231" stop-color="#00d8ff"></stop><stop offset=".5138" stop-color="#00c0ff"></stop><stop offset=".7773" stop-color="#00b2ff"></stop><stop offset="1" stop-color="#00adff"></stop>
+</g></svg></span><span class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-spacing-6 u-icon-3" data-href="/vercitas"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5629"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-5629"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="512" y1="256" y2="256"><stop offset="0" stop-color="#00f1ff"></stop><stop offset=".231" stop-color="#00d8ff"></stop><stop offset=".5138" stop-color="#00c0ff"></stop><stop offset=".7773" stop-color="#00b2ff"></stop><stop offset="1" stop-color="#00adff"></stop>
 </linearGradient><path d="m512 256c0 141.386719-114.613281 256-256 256s-256-114.613281-256-256 114.613281-256 256-256 256 114.613281 256 256zm0 0" fill="url(#a)"></path><g fill="#fff"><path d="m329.746094 331.78125c-8.28125 0-15 6.71875-15 15v26.703125c0 13.8125-11.234375 25.050781-25.050782 25.050781h-134.171874c-13.8125 0-25.050782-11.238281-25.050782-25.050781v-234.96875c0-13.8125 11.238282-25.050781 25.050782-25.050781h134.171874c13.816407 0 25.050782 11.238281 25.050782 25.050781v26.703125c0 8.28125 6.71875 15 15 15 8.285156 0 15-6.71875 15-15v-26.703125c0-30.355469-24.691406-55.050781-55.050782-55.050781h-134.171874c-30.355469 0-55.050782 24.695312-55.050782 55.050781v234.96875c0 30.355469 24.695313 55.050781 55.050782 55.050781h134.171874c30.355469 0 55.050782-24.695312 55.050782-55.050781v-26.703125c0-8.28125-6.714844-15-15-15zm0 0"></path><path d="m435.285156 231.902344-29.894531-29.898438c-5.859375-5.855468-15.355469-5.855468-21.214844 0-5.859375 5.859375-5.859375 15.355469 0 21.214844l18.449219 18.449219h-156.316406c-8.285156 0-15 6.714843-15 15 0 8.285156 6.714844 15 15 15h156.316406l-18.449219 18.449219c-5.859375 5.859374-5.859375 15.355468 0 21.214843 2.929688 2.929688 6.765625 4.390625 10.605469 4.390625s7.679688-1.464844 10.605469-4.390625l29.898437-29.898437c13.65625-13.65625 13.65625-35.875 0-49.53125zm0 0"></path>
 </g></svg></span>
-
-            <h4 data-href="/modificar-cita" class="u-align-center u-text u-text-default u-text-16">Modificar Cita</h4>
-            <h4 data-href="/eliminar-cita" class="u-align-center u-text u-text-default u-text-17">Eliminar Cita</h4>
-            <h4 data-href="/vercitas" class="u-align-center u-text u-text-default u-text-18">Salir</h4>
+            <h4 class="u-text u-text-default u-text-16">
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href="modificar-cita+{{cit}}">Modificar Cita</a>
+            </h4>
+            <h4 class="u-text u-text-default u-text-17">
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-2" href="eliminar-cita+{{cit}}">Eliminar Cita</a>
+            </h4>
+            <h4 class="u-align-center u-text u-text-default u-text-18">
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-3" href="vercitas">Salir</a>
+            </h4>
           </div>
         </div>
       </div>

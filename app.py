@@ -1,8 +1,9 @@
 from typing import List
 from flask.helpers import make_response
 from werkzeug.wrappers import response
+from werkzeug.security import generate_password_hash, check_password_hash
 import yagmail as yagmail
-from flask import Flask, render_template, flash, request, redirect, url_for
+from flask import Flask, render_template, flash, request, redirect, session
 import utilidades, datosUsuarios, os, datosCitas, datosMedicos
 from datetime import datetime
 
@@ -11,8 +12,14 @@ app.secret_key = os.urandom(24)
 
 @app.route('/')
 def index():
+    if 'username' in session:
+        session.clear()
     datosMedicos.crearTabla(datosMedicos.conectarse())
     return render_template('Login.html')
+
+@app.route('/contactanos')
+def acerca():
+    return render_template('About.html')
 
 @app.route('/login', methods=('GET','POST'))
 def login():
@@ -20,13 +27,17 @@ def login():
         if request.method=='POST':
             user = request.form['username']
             password = request.form['password']            
-
+            
             if datosUsuarios.validarUsuario(datosUsuarios.conectarse(),user):
                 datos = datosUsuarios.devolverUsuario(datosUsuarios.conectarse(),user)
-                print(datos)
+                #print(datos)
                 for row in datos:
-                    print("User: ",row[0],"Clave: ",row[1])
-                    if(str(row[0])==str(user) and row[1]==password):
+                    #print("User: ",row[0],"Clave: ",row[1])
+                    if(str(row[0])==str(user) and check_password_hash(row[1],password)):
+                        session.clear()
+                        session['username']=user
+                        session['password']=row[1]
+                        session['opcion']="Login success"
                         response = make_response(render_template("pacientes/Citas.html"))
                         response.set_cookie("custome_cookie",str(row[0]))
                         return response
@@ -77,9 +88,9 @@ def registrarse():
             tipo = request.form['docTipe']
             doc = request.form['docReg']
             corr =request.form['emailReg']
-            clave = request.form['passReg']            
+            clave = generate_password_hash(request.form['passReg'])             
             datos ="("+doc+",'"+nom+"','"+ape+"','"+tipo+"','"+clave+"','"+corr+"')"
-            #print(datos)
+            #print(clave)
             val = datosUsuarios.registrarUsuario(datosUsuarios.conectarse(),datos)  
             datosUsuarios.conectarse().close()
 

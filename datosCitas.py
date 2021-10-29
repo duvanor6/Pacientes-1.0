@@ -3,7 +3,7 @@ import sqlite3
 def conectarse():
     try:
         con = sqlite3.connect('dbcitas.db')
-        print("conectados a citas")
+        #print("conectados a citas")
         return con
     except:
         print("No se pudo conectar con citas")
@@ -14,7 +14,7 @@ def crearTabla(con):
         cursorObj.execute('CREATE TABLE if not exists citas (id integer PRIMARY KEY AUTOINCREMENT, nombre text, documento integer, tipo_documento text, tipo_cita text, fecha_cita date, fecha_creacion date, celular text, agregado real)')
         con.commit()
         con.close()
-        print("Tabla creada para citas")
+        #print("Tabla creada para citas")
     except:
         print("No se pudo crear la tabla citas")
 
@@ -43,7 +43,7 @@ def obtenerCitas(con, cedula):
         con.close()
         return result
     except ValueError:
-        print("No se encontró cita(s)")
+        #print("No se encontró cita(s)")
         return None
 
 def devolverCita(con, id):
@@ -55,7 +55,7 @@ def devolverCita(con, id):
         con.close()
         return result
     except ValueError:
-        print("No se encontró")
+        #print("No se encontró")
         return None
 
 def eliminarCita(con, id):
@@ -76,12 +76,12 @@ def validarCita(con, id):
         print(registro)
         if registro != []:
             con.close()  
-            print("True cita")      
+            #print("True cita")      
             return True
         else:
             con.close()
-            print("False cita")    
+            #print("False cita")    
             return False
     except ValueError:
-        print("No se encontró")
+        #print("No se encontró")
         return False
