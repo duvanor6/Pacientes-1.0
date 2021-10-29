@@ -14,8 +14,10 @@ app.secret_key = os.urandom(24)
 def index():
     if 'username' in session:
         session.clear()
+    response = make_response(render_template('LoginModo.html'))
+    response.set_cookie("custome_cookie","")
     datosMedicos.crearTabla(datosMedicos.conectarse())
-    return render_template('LoginModo.html')
+    return response
 
 @app.route('/login-paciente')
 def logpac():
@@ -46,7 +48,7 @@ def loginmedicos():
                         session['username']=user
                         session['password']=row[1]
                         session['opcion']="Login success"
-                        response = make_response(render_template("Doctores/index.html"))
+                        response = make_response(redirect('/Pacientes'))
                         response.set_cookie("custome_cookie",str(row[0]))
                         return response
                     else:
@@ -54,13 +56,18 @@ def loginmedicos():
                         flash(error)
                         print("Error!")
                         error=""
-                        return redirect('/')      
-            
+                        return redirect('/login-medicos')      
+            else:
+                error = "El usuario no existe"
+                flash(error)
+                print("Error!")
+                error=""
+                return redirect('/')
                        
     except ValueError:
         print('error',ValueError)
         return render_template('Login.html')
-
+    
 
 @app.route('/log-paciente', methods=('GET','POST'))
 def loginpaciente():
@@ -79,7 +86,7 @@ def loginpaciente():
                         session['username']=user
                         session['password']=row[1]
                         session['opcion']="Login success"
-                        response = make_response(render_template("pacientes/Citas.html"))
+                        response = make_response(redirect('/Pacientes-Medicos'), )
                         response.set_cookie("custome_cookie",str(row[0]))
                         return response
                     else:
@@ -87,7 +94,7 @@ def loginpaciente():
                         flash(error)
                         print("Error!")
                         error=""
-                        return redirect('/')      
+                        return redirect('/login-paciente')      
             
     except ValueError:
         print('error',ValueError)
@@ -126,29 +133,37 @@ def registrarse():
             corr =request.form['emailReg']
             clave = generate_password_hash(request.form['passReg'])             
             datos ="("+doc+",'"+nom+"','"+ape+"','"+tipo+"','"+clave+"','"+corr+"','"+request.form['userTipe']+"')"
-            #print(clave)
+            
             if(request.form['userTipe']=='Medico'):
-                val = datosMedicos.registrarUsuario(datosUsuarios.conectarse(),datos)  
-                datosUsuarios.conectarse().close()
+                if(not datosMedicos.validarUsuario(datosMedicos.conectarse(),doc)):
+                    val = datosMedicos.registrarUsuario(datosUsuarios.conectarse(),datos)  
+                    datosUsuarios.conectarse().close()                    
+                    error = "Usuario registrado"
+                else: 
+                    error = "El usuario "+doc+" ya se encuentra en la base de datos"
+                    val = False
             elif(request.form['userTipe']=='Paciente'):
-                val = datosUsuarios.registrarUsuario(datosUsuarios.conectarse(),datos)  
-                datosUsuarios.conectarse().close()
+                
+                if(not datosUsuarios.validarUsuario(datosUsuarios.conectarse(),doc)):
+                    val = datosUsuarios.registrarUsuario(datosUsuarios.conectarse(),datos)  
+                    datosUsuarios.conectarse().close()                    
+                    error = "Usuario registrado"
+                else:
+                    print(datos)
+                    error = "El usuario "+doc+" ya se encuentra en la base de datos"
+                    val= False
         except:
-            error = "Error al intentar registrar"
             flash(error)
             print("Error!")
-            error=None
             return redirect('/registro')     
         finally:
             if val:
-                error = "Usuario registrado"
                 flash(error)
                 print("usuario registrado!")   
                 error=None                 
                 return redirect("/")
             else:
-                print("Error de datos")
-                error = "No se pudo regitrar el usuario,verifique los datos"
+                print("Error de datos")                
                 flash(error)
                 error=None
                 return redirect("/registro")
